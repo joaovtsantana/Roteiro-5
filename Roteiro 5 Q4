@@ -1,0 +1,27 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Seu nome: ");
+        string nome = Console.ReadLine();
+
+        Console.Write("Data e hora (dd/MM/yyyy HH:mm): ");
+        DateTime dataCompromisso = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy HH:mm", null);
+
+        DateTime hoje = DateTime.Today;
+        int diasFaltam = (dataCompromisso.Date - hoje).Days;
+        string diaSemana = dataCompromisso.ToString("dddd");
+
+        string mensagem = string.Format(
+            "Olá, {0}!\nSeu compromisso será em {1} dias, na {2}.\nData marcada: {3:dd/MM/yyyy} às {3:HH:mm}",
+            nome, 
+            diasFaltam, 
+            diaSemana, 
+            dataCompromisso
+        );
+
+        Console.WriteLine("\n" + mensagem);
+    }
+}
