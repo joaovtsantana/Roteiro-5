@@ -1,0 +1,17 @@
+using System.Globalization;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("escreva uma frase");
+        string frase = Console.ReadLine();
+
+        Console.WriteLine(frase.Trim());
+        Console.WriteLine(frase.Split());
+        Console.WriteLine(frase.Replace('S','a'));
+        Console.WriteLine(frase.StartsWith("abigail"));
+        Console.WriteLine(frase.EndsWith("frase"));
+
+    }
+}
