@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Digite o seu CPF: ");
+        string entrada = Console.ReadLine();
+
+        string cpfLimpo = entrada.Trim().Replace(".", "").Replace("-", "").Replace(" ", "");
+
+        if (cpfLimpo.Length == 11)
+        {
+            if (!cpfLimpo.StartsWith("0"))
+            {
+                string cpfFormatado = $"{cpfLimpo.Substring(0, 3)}.{cpfLimpo.Substring(3, 3)}.{cpfLimpo.Substring(6, 3)}-{cpfLimpo.Substring(9, 2)}";
+
+                Console.WriteLine($"\nLimpo: {cpfLimpo}");
+                Console.WriteLine($"Formatado: {cpfFormatado}");
+            }
+            else
+            {
+                Console.WriteLine("Erro: Começa com 0.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Erro: Tamanho inválido.");
+        }
+    }
+}
